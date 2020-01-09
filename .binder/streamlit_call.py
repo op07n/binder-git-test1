@@ -1,5 +1,7 @@
 from subprocess import Popen
+import os
 
 def load_jupyter_server_extension(nbapp):
     """serve the streamlit app"""
-    Popen(["streamlit", "run", "simple-streamlit-app/simple_app.py", "--browser.serverAddress=0.0.0.0", "--server.enableCORS=False"])
+    os.chdir('simple-streamlit-app')
+    Popen(["streamlit", "run", "app.py", "--browser.serverAddress=0.0.0.0", "--server.enableCORS=False"])
